@@ -19,3 +19,5 @@ Simple kafka service setup using docker and a wrapper for some of the most commo
 ### Create topic
 `make create-topic topic={topic name} r={replication-factor} p={partitions}`
 
+### Describe topics
+`make describe-topics topic={topic name}`
