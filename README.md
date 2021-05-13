@@ -34,5 +34,8 @@ Simple kafka service setup using docker and a wrapper for some of the most commo
 ### Produce messages to Kafka with both key and value
 `make key-value-producer topic={topic name} sep={separator between key and value}`
 
+### Consume a Kafka topic
+`make console-consumer topic={topic name}`
+
 ### Consume a Kafka topic and show both key and value
 `make key-value-consumer topic={topic name}`
