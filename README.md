@@ -1,5 +1,5 @@
 # Description
-Simple kafka service setup using docker and a wrapper for the common Kafka cli commands
+Simple kafka service setup using docker and a wrapper for some of the most common Kafka cli commands
 
 # Usage
 
@@ -15,3 +15,7 @@ Simple kafka service setup using docker and a wrapper for the common Kafka cli c
 
 ### List Topics
 `make list-topics`
+
+### Create topic
+`make create-topic topic={topic name} r={replication-factor} p={partitions}`
+
