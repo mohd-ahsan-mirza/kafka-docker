@@ -3,5 +3,5 @@ Simple kafka setup using docker
 
 # Usage
 
-## Starting service
+### Starting service
 `make build`
