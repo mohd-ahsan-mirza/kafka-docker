@@ -30,3 +30,6 @@ Simple kafka service setup using docker and a wrapper for some of the most commo
 
 ### Produce messages to the topic from the file
 `make file-producer topic={topic name} file={file path}`
+
+### Produce messages to Kafka with both key and value
+`make key-value-producer topic={topic name} sep={separator between key and value}`
