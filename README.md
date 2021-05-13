@@ -1,5 +1,5 @@
 # Description
-Simple kafka setup using docker
+Simple kafka service setup using docker and a wrapper for the common Kafka cli commands
 
 # Usage
 
@@ -11,7 +11,7 @@ Simple kafka setup using docker
 ### To shut down the service
 `make clean`
 
-## Kafka
+## Kafka commands
 
 ### List Topics
 `make list-topics`
