@@ -1,3 +1,7 @@
+build:
+	docker-compose up -d
+clean:
+	docker-compose down
 list-topics:
 	@./bin/kafka-topics.sh --zookeeper localhost:2181 --list
 create-topic:
