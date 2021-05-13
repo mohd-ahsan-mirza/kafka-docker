@@ -24,3 +24,6 @@ Simple kafka service setup using docker and a wrapper for some of the most commo
 
 ### List Kafka topics (with configuration values) that have specific configuration overrides
 `make describe-topics-with-overrides`
+
+### Produce a message to a Kafka topic using command prompt
+`make console-producer topic={topic name}`
