@@ -3,5 +3,8 @@ Simple kafka setup using docker
 
 # Usage
 
-### Starting service
+### To start the service
 `make build`
+
+### To shut down the service
+`make clean`
