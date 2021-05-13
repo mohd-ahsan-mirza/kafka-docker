@@ -10,6 +10,10 @@ console-producer:
 	@./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic $(topic)
 file-producer:
 	@./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic $(topic) < $(file)
+key-value-producer:
+	@./bin/kafka-console-producer.sh --broker-list localhost:9092 --topic $(topic) --property parse.key=true --property key.separator=$(sep)
+key-value-consumer:
+	@./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic $(topic) --formatter kafka.tools.DefaultMessageFormatter --property print.key=true --property print.value=true --from-beginning
 console-consumer:
 	@./bin/kafka-console-consumer.sh --topic $(topic) --from-beginning --bootstrap-server localhost:9092
 increase-partitions:
