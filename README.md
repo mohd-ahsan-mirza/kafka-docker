@@ -39,3 +39,6 @@ Simple kafka service setup using docker and a wrapper for some of the most commo
 
 ### Consume a Kafka topic and show both key and value
 `make key-value-consumer topic={topic name}`
+
+### Increase the number of partitions of a Kafka topic
+`make increase-partitions topic={topic name} p={partitions}`
