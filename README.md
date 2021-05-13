@@ -27,3 +27,6 @@ Simple kafka service setup using docker and a wrapper for some of the most commo
 
 ### Produce a message to a Kafka topic using command prompt
 `make console-producer topic={topic name}`
+
+### Produce messages to the topic from the file
+`make file-producer topic={topic name} file={file path}`
