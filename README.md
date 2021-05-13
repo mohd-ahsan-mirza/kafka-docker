@@ -21,3 +21,6 @@ Simple kafka service setup using docker and a wrapper for some of the most commo
 
 ### Describe topics
 `make describe-topics topic={topic name}`
+
+### List Kafka topics (with configuration values) that have specific configuration overrides
+`make describe-topics-with-overrides`
