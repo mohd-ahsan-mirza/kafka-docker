@@ -1,3 +1,7 @@
+all:
+	@echo ""
+	@cat README.md
+	@echo ""
 build:
 	docker-compose up -d
 clean:
@@ -22,13 +26,16 @@ console-consumer:
 	@./kafka_2.11-1.0.0/bin/kafka-console-consumer.sh --topic $(topic) --from-beginning --bootstrap-server localhost:9092
 increase-partitions:
 	@./kafka_2.11-1.0.0/bin/kafka-topics.sh --zookeeper localhost:2181 --alter --topic $(topic) --partitions $(p)
-increase-retention-period:
-	@./kafka_2.11-1.0.0/bin/kafka-configs.sh --zookeeper localhost:2181 --alter --entity-type topics --entity-name $(topic) --add-config retention.ms=$(ret)
 get-topic-config:
 	@./kafka_2.11-1.0.0/bin/kafka-configs.sh --describe --zookeeper localhost:2181 --entity-type topics --entity-name $(topic)
-purge-topic:
-	@./kafka_2.11-1.0.0/bin/kafka-configs.sh --zookeeper localhost:2181 --alter --entity-type topics --entity-name $(topic) --add-config retention.ms=10
-	@sleep 300
+update-retention-period:
+	@./kafka_2.11-1.0.0/bin/kafka-configs.sh --zookeeper localhost:2181 --alter --entity-type topics --entity-name $(topic) --add-config retention.ms=$(period)
+reset-retention-period:
 	@./kafka_2.11-1.0.0/bin/kafka-configs.sh --zookeeper localhost:2181 --alter --entity-type topics --entity-name $(topic) --delete-config retention.ms
+purge-topic:
+	@make update-retention-period topic=$(topic) period=1000
+	@echo "Sleeping for 5 mins"
+	@sleep 300
+	@make reset-retention-period topic=$(topic)
 delete-topic:
 	@./kafka_2.11-1.0.0/bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic $(topic)
