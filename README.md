@@ -43,4 +43,14 @@ Simple kafka service setup using docker and a wrapper for some of the most commo
 ### Increase the number of partitions of a Kafka topic
 `make increase-partitions topic={topic name} p={partitions}`
 
-### Change the retention time of a Kafka topic
+### Update the retention time of a Kafka topic
+`make update-retention-period topic={topic name} period={time in ms}`
+
+### Reset retention period of Kafka topic
+`make reset-retention-period topic={topic name}`
+
+### Purge kafka topic
+`make purge-topic topic={topic name}`
+
+### Delete kafka topic
+`make delete-topic topic={topic name}
