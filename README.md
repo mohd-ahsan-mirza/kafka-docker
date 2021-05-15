@@ -53,4 +53,4 @@ Simple kafka service setup using docker and a wrapper for some of the most commo
 `make purge-topic topic={topic name}`
 
 ### Delete kafka topic
-`make delete-topic topic={topic name}
+`make delete-topic topic={topic name}`
